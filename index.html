@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poketype - Jon Sleep</title>
+    
+    <link href="jquery-ui-1.10.4.custom/css/blitzer/jquery-ui-1.10.4.custom.min.css" rel="stylesheet"></link>
+    <script src="jquery-ui-1.10.4.custom/js/jquery-1.10.2.js"></script>
+    <script src="jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"></script>
+    <link href="css/poketype.css" rel="stylesheet"></link>
+    <script src="js/poketype.js"></script>
+    <script src = "js/defense.js"></script>
+    <script src = "js/OptionsDlg.js"></script>
+    <script>
+        $(function() {new Poketype().init();});
+    </script>
+</head>
+<body class = "flexContainer vertical">
+     <header class = "fixedFlexItem flexContainer space-between">
+        <span id = "title" class = "fixedFlexItem">Pok&eacute;Type</span>
+        <div id="searchAndButton" class = "center">
+            <input id = "searchBar" type="text"/>
+            <button id = "searchBtn">Search</button>
+        </div>
+    </header>
+
+
+    <div id="content" class = "fullFlexItem flexContainer vertical space-between">
+        <div class = "end">
+            <button id = "helpBtn">Help!</button>
+        </div>
+        <div id="species-container" class = "flexContainer center fixedFlexItem">
+            <!-- This div holds the sprite -->
+            <div id="sprite" class = "fixedFlexItem">
+                <img id = "spriteImg" />
+            </div>
+            <div id = "info">
+                <!-- This div will contain the primary typing, a slash, and the secondary typing -->
+                <div id="typing">
+                </div>
+                <br/>
+                <!-- This div is for the name -->
+                <div id="species-name">
+                </div>
+                <!-- This div will hold the abilities -->
+                <div id="abilities">
+                    Abilities: 
+                </div>
+            </div>
+        </div>
+
+        <div  class = "flexContainer center fixedFlexItem">
+            <button id = "atkBtn">Attack</button>
+        </div>
+            
+        
+
+        <div id="effectiveness-container" class = "flexContainer space-between fixedFlexItem">
+            <div id="super_effective">
+                <span class="effectiveness-header">Super Effective On..</span>
+                <ul class="types">
+                </ul>
+            </div>
+            <div id="weak" class = "hidden">
+                <span class="effectiveness-header">Is weak to...</span>
+                <ul class="types">
+                </ul>
+            </div>
+            <div id="normal">
+                <span class="effectiveness-header">Normally Damages..</span>
+                <ul class="types">
+                </ul>
+            </div>
+            <div id="ineffective">
+                <span class="effectiveness-header">Ineffective On...</span>
+                <ul class="types">
+                </ul>
+            </div>
+            <div id="no_effect">
+                <span class="effectiveness-header">No Effect On...</span>
+                <ul class="types">
+                </ul>
+            </div>
+            <div id="resists" class = "hidden">
+                <span class="effectiveness-header">Resists...</span>
+                <ul class="types">
+                </ul>
+            </div>
+            <div id="immune" class = "hidden">
+                <span class="effectiveness-header">Immune to...</span>
+                <ul class="types">
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+
+<div id="optionsDlg" title="Poketype Options" class="dialogTemplate vertical hidden">
+   <div class="fixedFlexItem">
+      <p>
+          This specific Poketype web application was proposed by Vignesh Kalidas and coded into existence by Jonathan Sleep for Clint Staley's Advanced JS Class Final Project. The application has absolutely no associated with Nintendo. Below is a drop-down of all the available pokemon. 
+      </p>
+   </div>
+   <ul id="pokeMenu" title="Select a Pokemon out of a ridiculously long list">
+      <li><a href="#">Select Pokemon</a>
+        <ul id = 'pokeList'>
+        </ul>
+      </li>
+    </ul>
+</div>
+
+
+</html>

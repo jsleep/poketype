@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced JavaScript Final Project Proposal</title>
+    <style type="text/css">
+    body {
+    background-color: #E8E8E8;
+    font-family: sans-serif;
+    color: #333;
+    }
+    
+    h2 {
+        text-decoration: underline;
+    }
+    
+    p {
+        padding: 0 10px 0 40px;
+    }
+    
+    .small {
+        max-width: 700px;
+    }
+    
+    .info {
+        position: relative;
+        left: 75px;
+        top: -10px;
+        max-width: 1000px;
+    }
+    </style>
+</head>
+<body>
+    <!-- &#8212 is an em dash -->
+    <h1>Project Proposal &#8212; Vignesh Kalidas</h1>
+
+    <h2>Overview</h2>
+    <p>
+        I like playing Pok&eacute;mon. I enjoy carefully crafting a team and battling against others. I sometimes find myself in the position where I'd like to reaffirm the effectiveness of the move I plan on using against the opponent. I also sit in an IRC channel on Freenode dedicated to discussing Pok&eacute;mon, where there's the occasional question: "Hey, anyone know what type is super effective on [ some Pok&eacute;mon's name]?"
+    </p>
+
+    <p>
+        Current solutions involve a google search for that Pok&eacute;mon, clicking on a link (e.g.&#8212;a link to a Bulbapedia article), and navigating to the section on Type Effectiveness. That's a <i>lot</i> of clicking. Bulbapedia's page is massive, therefore somewhat slow, depending on your connection.
+    </p>
+
+    <p>
+        My solution is this service, tentatively named <strong>Pok&eacute;Type</strong>.
+    </p>
+
+    <p>
+       Pok&eacute;Type provides a simple textfield within which the user can enter either the opposing Pok&eacute;mon's name. The page below updates with the following:
+    </p>
+    <ul class="info">
+        <li>A sprite</li>
+        <li>The Pok&eacute;mon's typing</li>
+        <li>The Pok&eacute;mon's name</li>
+        <li>The effectiveness of the 18 types on this Pok&eacute;mon</li>
+    </ul>
+
+    <p>
+        This will provide an answer at a quick glance, with results color coded based on type (e.g.&#8212;Ground will be <span style="color: #D4AA52">brown</span>, Water will be <span style="color: #6480DE">blue</span>)
+    </p>
+
+    <h2>REST API</h2>
+    <p>
+        I plan on using <a href="http://pokeapi.co/">Pok&eacute;api</a> to access information about the Pok&eacute;mon the user searches for.
+    </p>
+
+    <h3>URI from REST Interface</h3>
+    <p>
+        The following API calls will be made, where each first-level bullet point is one HTTP request to the API:
+        <ul class="info">
+            <li>Metadata on the Pok&eacute;mon: <a href="http://pokeapi.co/api/v1/pokemon/swampert/">http://pokeapi.co/api/v1/pokemon/swampert/</a></li>
+            <ul>
+                <li>Name</li>
+                <li>Typing</li>
+                <li style="color: #D00"><strong>EDIT: Sprite</strong></li>
+                <li>Abilities</li>
+            </ul>
+            <li>The Pok&eacute;mon's Primary typing: <a href="http://pokeapi.co/api/v1/type/5/">http://pokeapi.co/api/v1/type/5/</a></li>
+            <ul>
+                <li>Do more damage (Super Effective) against this Pok&eacute;mon</li>
+                <li>Do less damage (Not very effective) against this Pok&eacute;mon</li>
+                <li>Do no damage (Immune) against this Pok&eacute;mon</li>
+            </ul>
+            <li>The Pok&eacute;mon's Secondary typing, and the same metadata as its primary typing: <a href="http://pokeapi.co/api/v1/type/11/">http://pokeapi.co/api/v1/ability/6/</a></li>
+            <li>The Pok&eacute;mon's Abilities <a href="http://pokeapi.co/api/v1/type/11/">http://pokeapi.co/api/v1/ability/6/</a></li>
+            <ul><li>Due to the description of the abilities being absent in the API, when clicked on, the ability will simply link to a different website, rather than display the description on the page. An API call <strong>will</strong> be made, however, to fetch the name of the ability. While this information is already available from the metadata on the Pok&eacute;mon, when the API is updated with this information, it will make updating this service incredibly simple</li></ul>
+        </ul>
+    </p>
+    <p>
+        When the primary and secondary type's effectiveness data comes in, it needs to be processed via JavaScript to calculate how much the damage multiplier is. If a move does double damage on both a Pok&eacute;mon's types, the multiplier is 2 * 2, making it 4x effective. It will be made clear whether a Super Effective move does 2x or 4x damage, or an ineffective move does 0.5x or 0.25x damage.
+    </p>
+
+    <h2>Mockup</h2>
+    <h3>Example UI (subject to change)</h3>
+    <img class="small" src="http://i.imgur.com/Nv1eJYR.png">
+    <h3>jQuery UI Dialog</h3>
+    <img class="small" src="http://i.imgur.com/jVnXxrp.png">
+
+    <h2>Sample Walkthrough</h2>
+    <p>
+        Here's a simple user workflow:
+    </p>
+    <ul class="info">
+        <li>Access the website</li>
+        <li>Type the Pok&eacute;mon's name</li>
+        <li>Read the information</li>
+    </ul>
+    <p>Sometimes, the user might need a bit of help. Let's examine a confused user's workflow:</p>
+    <ul class="info">
+        <li>Access the website</li>
+        <li>Incorrectly type the Pok&eacute;mon's name</li>
+        <li>Click around in frustration</li>
+        <li>Out of sheer dumb luck, our irate user finds the 'Help!' button</li>
+        <li>Click around some more, blinded by fury, rendered incapable of reading</li>
+        <li>Click the dropdown menu, which lists all 718 Pok&eacute;mon</li>
+        <li>Click the Pok&eacute;mon the user wanted (enough monkeys with typewriters&hellip;)</li>
+        <li>Read the information</li>
+    </ul>
+</body>
+</html>

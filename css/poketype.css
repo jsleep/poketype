@@ -1,0 +1,205 @@
+html, body{
+   height: 100%;
+}
+
+body{
+   margin:0;
+   font-family:Futura Extra Bold;
+
+}
+
+header{
+   background-color:#6699FF;
+}
+
+div{
+   font-weight: bold;
+}
+
+
+
+#effectiveness-container{
+   color: white;
+   size: 150%;
+}
+
+.end{
+    -webkit-align-self: flex-end;
+     align-self: flex-end; 
+}
+
+img{
+   width:250px;
+   height:250px;
+}
+
+.effectiveness-header{
+   text-decoration:underline;
+}
+
+
+#title{
+   margin:20px;
+   font-weight: bold;
+   font-size: 250%;
+   color: red;
+}
+
+#searchAndButton{
+   -webkit-align-self: center;
+}
+
+#searchBar{
+   height: 1.5em;
+   width: 14em;
+   background-color: red;
+}
+
+#species-name{
+   color: white;
+   font-size: 150%;
+}
+
+#typing{
+   font-size: 200%;
+}
+
+.electric{
+   color: yellow;
+}
+
+.grass{
+   color: #66FF33;
+}
+
+.ground{
+   color: #996633;
+}
+
+.water{
+   color:#6699FF;
+}
+
+.normal{
+   color:  #FF6666;
+}
+
+.fighting{
+   color: #663300;
+}
+
+.flying{
+   color: #0066FF;
+}
+
+.bug{
+   color: #00FF99;
+}
+.ghost{
+   color: #660066;
+}
+.psychic{
+   color: #CC0099;
+}
+.ice{
+   color: #66FFFF;
+}
+.dragon{
+   color: #9999FF;
+}
+.dark{
+   color: #29293D;
+}
+.fairy{
+   color: #FF00FF;
+}
+.fire{
+   color: #FF0000;
+}
+.steel{
+   color: #3C3C48;
+}
+.rock{
+   color: #FF9900;
+}
+.poison{
+   color: #009900;
+}
+#abilities{
+   color:#6699FF;
+}
+
+@font-face{
+   font-family: Futura Extra Bold;
+   src: url(Futura_Extra_Bold.ttf);
+}
+
+ul{
+    list-style-type: none;
+}
+
+#effectiveness-container{
+   margin: 10px;
+}
+
+.dialogTemplate {
+   display: none;
+   border: 1px solid;
+}
+
+.hidden{
+   display:none;
+}
+
+#content{
+   background-color:#BFBFBF;
+   height:100%;
+}
+
+.fixedFlexItem {
+   flex: none;
+   -webkit-flex: none;
+   -ms-flex: none;
+}
+
+.fullFlexItem {
+   flex: 1 1 auto;
+   -webkit-flex: 1 1 auto;
+   -ms-flex: 1 1 auto;
+}
+
+.grow {
+   flex: 1 0 auto;
+   -webkit-flex: 1 0 auto;
+   -ms-flex: 1 0 auto;
+}
+
+.shrink {
+   flex: 1 1 auto;
+   -webkit-flex: 1 1 auto;
+   -ms-flex: 1 1 auto;
+}
+
+.flexContainer {
+   display: flex;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   overflow: auto;
+}
+
+.center{
+   align-items: center;
+   justify-content: center;
+}
+
+.vertical {
+   flex-direction: column;
+   -webkit-flex-direction: column;
+   -ms-flex-direction: column;
+}
+
+.space-between {
+   justify-content: space-between;
+   -webkit-justify-content: space-between;
+   -ms-flex-pack: justify; 
+}
