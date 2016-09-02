@@ -2,8 +2,8 @@ var Poketype = function(){
     this.pokedex;
     this.pokemonList = [];
     this.currentPokemon;
-    this.resource = "http://pokeapi.co";
-    this.bulbSearch = 'http://bulbapedia.bulbagarden.net/w/index.php?title=Special%3ASearch&search=';
+    this.resource = "https://pokeapi.co";
+    this.bulbSearch = 'https://bulbapedia.bulbagarden.net/w/index.php?title=Special%3ASearch&search=';
     this.atk = true;
 }
 
