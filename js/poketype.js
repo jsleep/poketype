@@ -75,7 +75,7 @@ Poketype.prototype.search = function(){
     var resource, self = this;
 
     var val = $('#searchBar').val(), prevSprite;
-    $("#spriteImg").attr("src",  'http://sierrafire.cr.usgs.gov/images/loading.gif');
+    $("#spriteImg").attr("src",  'img/giphy.gif');
     if(!isNaN(val)){
         resource = "api/v1/pokemon/" + val+'/';
     }
@@ -136,7 +136,8 @@ Poketype.prototype.loadSprite = function(){
           dataType: "json",
      
           success: function(data) {
-             imgUrl = self.resource + data.image;
+             var splitarr = data.image.split("/");
+             imgUrl = "img/" + splitarr[splitarr.length - 1];
           },
      
           error: function(xhr, status) {
